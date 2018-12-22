@@ -17,11 +17,17 @@ class PaymentByOfferViewController: UIViewController {
     // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        offerTypeLabel.text = selectedOffer?.type.uppercased()
+        if let off = selectedOffer {
+            offerTypeLabel.text = off.type.uppercased()
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.offerTypeLabel.alpha = 1
+        }
+        // We can Use a UserDefault to Save The Last Selected Offer
     }
 }

@@ -46,7 +46,6 @@ class OffersViewController: UIViewController {
         switch offer.type {
         case "minus":
             newPrice = totalPrice - Float(offer.value)
-            reducedPriceLabel.text = String(newPrice) + Unit.euro
         default:
             newPrice = totalPrice - (Float(Book.offers[0].value) * totalPrice) / 100
         }
@@ -67,9 +66,23 @@ class OffersViewController: UIViewController {
         }
     }
     
+    func goToPaymentOrAnimate() {
+        if (reducedPriceLabel.text?.contains(Unit.euro))! {
+            self.performSegue(withIdentifier: "goToPaymentSegue", sender: Offer.self)
+        }
+        else {
+            reducedPriceLabel.transform = CGAffineTransform.init(scaleX: 0.7, y: 0.9)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [], animations: {
+                self.reducedPriceLabel.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                self.reducedPriceLabel.transform = .identity
+            })
+        }
+        
+    }
+    
     // MARK: - User Action
     @IBAction func goToPayment(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToPaymentSegue", sender: Offer.self)
+        goToPaymentOrAnimate()
     }
     
     // MARK: - Navigation
