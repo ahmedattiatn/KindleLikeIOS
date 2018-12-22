@@ -22,6 +22,6 @@ class PaymentByOfferViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        offerTypeLabel.text = selectedOffer?.type
+        offerTypeLabel.text = selectedOffer?.type.uppercased()
     }
 }
