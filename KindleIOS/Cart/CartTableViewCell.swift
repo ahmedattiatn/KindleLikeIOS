@@ -15,11 +15,18 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var selectedBookPrice: UILabel!
     // MARK: - Proprities
     var book : Book?
+    let animatedX :CGFloat = 30
     
     // MARK: - View life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        animateCartCellElementWith(xVal: animatedX)
+    }
+    
+    override func prepareForReuse() {
+        animateCartCellElementWith(xVal: animatedX)
+        
     }
     
     // MARK: - Methods
@@ -37,4 +44,15 @@ class CartTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    func animateCartCellElementWith(xVal:CGFloat) {
+        selectedBookTitleLabel.center.x += xVal
+        selectedBookPrice.center.x -= xVal
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
+            self.selectedBookTitleLabel.center.x -= xVal
+            self.selectedBookPrice.center.x += xVal
+            
+        })
+    }
 }
+
