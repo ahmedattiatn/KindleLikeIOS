@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="345" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-j5-8Lm">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellBooks" rowHeight="345" id="LMC-Gt-2kZ" customClass="BookTableViewCell" customModule="KindleIOS" customModuleProvider="target">
@@ -154,12 +154,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NE1-e0-y7r"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sheet-bottom-fog-12" translatesAutoresizingMaskIntoConstraints="NO" id="63u-dk-RZd">
+                                <rect key="frame" x="0.0" y="536" width="375" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="83O-xf-bUa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63u-dk-RZd" secondAttribute="trailing" id="6if-N3-7QE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="63u-dk-RZd" secondAttribute="bottom" id="6z2-wH-UCo"/>
+                            <constraint firstItem="63u-dk-RZd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AHJ-H2-FJ5"/>
                             <constraint firstItem="gtZ-j5-8Lm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cym-iM-4Vf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtZ-j5-8Lm" secondAttribute="trailing" id="f5c-t5-rvT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtZ-j5-8Lm" secondAttribute="bottom" id="pcX-Ot-gzz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtZ-j5-8Lm" secondAttribute="bottom" constant="20" id="pcX-Ot-gzz"/>
                             <constraint firstItem="gtZ-j5-8Lm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vRg-AW-QNT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -560,6 +569,7 @@
         <image name="fav" width="24" height="24"/>
         <image name="info-example" width="350" height="250"/>
         <image name="mask-time-line" width="355" height="80"/>
+        <image name="sheet-bottom-fog-12" width="350" height="82"/>
         <image name="white-subtitle" width="64" height="64"/>
     </resources>
 </document>

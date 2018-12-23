@@ -51,13 +51,13 @@ class BookTableViewCell: UITableViewCell {
     func animateBookCellElementWith(xVal:CGFloat) {
         bookPrice.center.x += xVal
         favImageView.center.x += xVal
-        bookTitleLabel.center.x -= xVal
-        bookDescriptionLabel.center.x -= xVal
+        bookTitleLabel.center.y -= xVal
+        bookDescriptionLabel.center.y -= xVal
         UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
             self.bookPrice.frame.origin.x -= xVal
             self.favImageView.frame.origin.x -= xVal
-            self.bookTitleLabel.frame.origin.x += xVal
-            self.bookDescriptionLabel.frame.origin.x += xVal
+            self.bookTitleLabel.frame.origin.y += xVal
+            self.bookDescriptionLabel.frame.origin.y += xVal
             
         })
     }
